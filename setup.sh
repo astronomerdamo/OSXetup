@@ -34,9 +34,13 @@ if [ "$pyAnswer" == "y" ]; then
         brew install python3
         pip3 install --upgrade pip3
         pip3 install setuptools
-    else
+    elif [ "$pyChoice" == 2 ]; then
+        echo "Installing Python via Anaconda (Continuum Analytics)"
         wget -O ~/Downloads/Miniconda3-3.7.0-MacOSX-x86_64.sh http://repo.continuum.io/miniconda/Miniconda3-3.7.0-MacOSX-x86_64.sh
         bash ~/Downloads/Miniconda3-3.7.0-MacOSX-x86_64.sh
+        rm ~/Downloads/Miniconda3-3.7.0-MacOSX-x86_64.sh
+    else
+        echo "Unknown input, all you had to do was specifiy '1' or '2'."
     fi
 
 else
