@@ -1,6 +1,5 @@
+#!/bin/bash
 # Clean install OS X setup with xcode command line tools and brew/brew-cask
-# Usage:
-# $ bash setup.sh
 
 # Installing xcode command line tools - May Requires user interaction
 sudo xcode-select --install
