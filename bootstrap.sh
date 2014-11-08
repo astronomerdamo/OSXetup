@@ -5,7 +5,6 @@
 sudo xcode-select --install
 echo "OSXetup > Press any key when install completes"
 read tmp
-# You might need to open xcode and 'agree' to the terms of service before use?
 
 echo ""
 echo "OSXetup > Install homebrew"
