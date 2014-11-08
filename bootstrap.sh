@@ -14,19 +14,6 @@ echo ""
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 
-echo ""
-echo "OSXetup > Install homebrew programs"
-echo ""
-brew install wget git vim macvim node fish
-brew linkapps
-
-echo ""
-echo "OSXetup > Install homebrew cask programs"
-echo ""
-brew tap caskroom/cask
-brew install brew-cask
-brew cask install google-chrome firefox iterm2 onyx atom brackets dropbox flux vlc xquartz steam
-
 #echo ""
 #echo "OSXetup > Install MacTex via homebrew"
 #echo ""
