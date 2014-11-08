@@ -12,6 +12,16 @@ echo ""
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 
+echo ""
+echo "OSXetup > Install brew formulae from brew.sh"
+echo ""
+./brew.sh
+
+echo ""
+echo "OSXetup > Install brew casks from cask.sh"
+echo ""
+./cask.sh
+
 # Python install prompt
 echo ""
 echo -n "OSXetup > Do you want to install Python? [y/n] > "
