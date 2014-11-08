@@ -12,12 +12,6 @@ echo ""
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 
-#echo ""
-#echo "OSXetup > Install MacTex via homebrew"
-#echo ""
-#brew cask install mactex
-#Note this installs the full 2.2 GB mactex package. I haven't decided if brew-cask is needed for mactex, might make more sense to just manually d/l from <https://tug.org/mactex/>
-
 # Python install prompt
 echo ""
 echo -n "OSXetup > Do you want to install Python? [y/n] > "
