@@ -18,21 +18,10 @@ brew install fish
 brew linkapps
 
 echo ""
-echo "OSXetup > Install homebrew cask programs"
+echo "OSXetup > Install homebrew cask"
 echo ""
 brew tap caskroom/cask
 brew install brew-cask
-brew cask install google-chrome
-brew cask install firefox
-brew cask install iterm2
-brew cask install onyx
-brew cask install atom
-brew cask install brackets
-brew cask install dropbox
-brew cask install flux
-brew cask install vlc
-brew cask install xquartz
-brew cask install steam
 
 #Remove old versions from the hombrew cellar
 brew cleanup
