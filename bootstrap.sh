@@ -1,6 +1,14 @@
 #!/bin/bash
 # Clean install OS X setup with xcode command line tools and brew/brew-cask
 
+# Get admin password and keep-alive until script finishes.
+sudo -v
+while true; do
+  sudo -n true;
+  sleep 60;
+  kill -0 "$$" || exit;
+done 2>/dev/null &
+
 # Installing xcode command line tools - May Requires user interaction
 sudo xcode-select --install
 echo "OSXetup > Press any key when install completes"
