@@ -8,13 +8,12 @@ help test and develop the OSXetup scripts and tools.
 Create a Mac OS X virtual machine
 =================================
 
-1. Install Oracle's Virtualbox  
-`brew cask install virtualbox`
+Mac OS X virtual machines can be created from their Installer apps with the create-OSX-VM.sh script.
+This script requires the Ruby gem iesd to manipulate the Installer,
+and then uses hdiutil to make an ISO.
+VirtualBox's VBoxManage is used to create and modify the VM before launching it.
 
-2. Install iesd to help manipulate Installer
-`gem install iesd`
+1. Download your desired Mac OS X Installer from the AppStore
 
-3. Download your desired Mac OS X Installer from the AppStore
-
-4. Run installer2iso.sh to create a Yosemite disk for use with Virtual Box
-`./modifyOSXInstaller.sh`
+2. Run create-OSX-VM.sh to create a OS X VM with VirtualBox
+`./create-OSX-VM.sh`
