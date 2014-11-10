@@ -45,7 +45,7 @@ case $pyAnswer in
             [1])
                 echo "Installing Python via homebrew"
                 brew install python3
-                pip3 install --upgrade pip3
+                pip3 install --upgrade pip
                 pip3 install setuptools
                 ;;
             [2])
