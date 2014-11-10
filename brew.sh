@@ -10,7 +10,6 @@ echo ""
 brew install wget
 brew install git
 brew install vim --with-python3
-brew install macvim
 brew install node
 brew install fish
 
