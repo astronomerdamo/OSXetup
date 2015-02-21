@@ -18,4 +18,4 @@ brew install brew-cask
 brew linkapps
 
 #Remove old versions from the hombrew cellar
-brew cleanup
+brew cleanup -s --force
