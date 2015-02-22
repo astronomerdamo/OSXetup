@@ -1,7 +1,14 @@
 #!/bin/bash
 # Clean install OS X setup with xcode command line tools and brew/brew-cask
 
-# Get admin password and keep-alive until script finishes.
+# Define mesage output types and colours
+ERROR="$(tput setaf 1)ERROR:$(tput sgr 0)"
+BOOTSTRAP="$(tput setaf 2)BOOTSTRAP:$(tput sgr 0)"
+
+# Change to home folder
+cd $HOME 
+
+# Ask admin password and keep-alive until script finishes.
 sudo -v
 while true; do
   sudo -n true;
@@ -9,36 +16,27 @@ while true; do
   kill -0 "$$" || exit;
 done 2>/dev/null &
 
-# Installing xcode command line tools - May Requires user interaction
+echo "${BOOTSTRAP} Installing xcode command line tools - May require user interaction"
 sudo xcode-select --install
-echo "OSXetup > Press any key when install completes"
-read tmp
+read -p "${BOOTSTRAP} Press any key when Xcode install completes"
 
-echo ""
-echo "OSXetup > Install homebrew"
-echo ""
+echo "${BOOTSTRAP} Installing homebrew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
+brew update
 
-echo ""
-echo "OSXetup > Install brew formulae from brew.sh"
-echo ""
-./brew.sh
-
-echo ""
-echo "OSXetup > Install brew casks from cask.sh"
-echo ""
-./cask.sh
+echo "${BOOTSTRAP} Installing formulae and casks from .brewfile..."
+brew tap homebrew/brewdler
+brew brewdle
+brew cleanup
 
 # Python install prompt
-echo ""
-echo -n "OSXetup > Do you want to install Python? [y/n] > "
+read -n "${BOOTSTRAP} Do you want to install Python? [y/n] > "
 read pyAnswer
 case $pyAnswer in
-    [yY])
-        echo "Note: all python installations are Python 3"
-        echo "Source: 1 - homebrew Python"
-        echo "        2 - Anaconda Python (Continuum Analytics)"
+    [yY]) 
+        echo "Source: 1 - homebrew Python (Python 3 only)"
+        echo "        2 - Anaconda Python (Miniconda, Continuum Analytics)"
         echo -n "[1/2] > "
         read pyChoice
         case $pyChoice in
@@ -49,13 +47,41 @@ case $pyAnswer in
                 pip3 install setuptools
                 ;;
             [2])
-                echo "Installing Python via Anaconda (Continuum Analytics)"
-                wget -O ~/Downloads/Miniconda3-3.7.0-MacOSX-x86_64.sh http://repo.continuum.io/miniconda/Miniconda3-3.7.0-MacOSX-x86_64.sh
-                bash ~/Downloads/Miniconda3-3.7.0-MacOSX-x86_64.sh
-                rm ~/Downloads/Miniconda3-3.7.0-MacOSX-x86_64.sh
+                echo "Which Python: 1 - Python 2.7"
+                echo "              2 - Python 3.4"
+                echo "              3 - Python 2.7 and Python 3.4"
+                echo -n "[1,2,3] > "
+                read minicondaChoice
+                case $minicondaChoice in
+                    [1])
+                        echo "Installing Python 2.7 via miniconda"
+                        wget -O ~/Downloads/Miniconda.sh http://repo.continuum.io/miniconda/Miniconda-3.8.3-MacOSX-x86_64.sh 
+                        bash ~/Downloads/Miniconda.sh
+                        rm ~/Downloads/Miniconda.sh
+                        ;;
+                    [2])
+                        echo "Installing Python 3.4 via miniconda3"
+                        wget -O ~/Downloads/Miniconda3.sh http://repo.continuum.io/miniconda/Miniconda3-3.8.3-MacOSX-x86_64.sh
+                        bash ~/Downloads/Miniconda3.sh
+                        rm ~/Downloads/Miniconda3.sh
+                        ;;
+                    [3])
+                        echo "Installing Python 2.7 via miniconda"
+                        wget -O ~/Downloads/Miniconda.sh http://repo.continuum.io/miniconda/Miniconda-3.8.3-MacOSX-x86_64.sh
+                        bash ~/Downloads/Miniconda.sh
+                        rm ~/Downloads/Miniconda.sh
+                        echo "Installing Python 3.4 via miniconda3"
+                        wget -O ~/Downloads/Miniconda3.sh http://repo.continuum.io/miniconda/Miniconda3-3.8.3-MacOSX-x86_64.sh
+                        bash ~/Downloads/Miniconda3.sh
+                        rm ~/Downloads/Miniconda3.sh
+                        ;;
+                    *)
+                        echo "Not a valid option - skipping"
+                        ;;
+                esac
                 ;;
             *) 
-                echo "Not a valid option - skipping install"
+                echo "Not a valid option - skipping"
                 ;;
         esac    
         ;;
