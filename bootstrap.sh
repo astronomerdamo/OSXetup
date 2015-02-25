@@ -28,7 +28,8 @@ brew update
 echo "${BOOTSTRAP} Installing formulae and casks from .brewfile..."
 brew tap homebrew/brewdler
 brew brewdle
-brew cleanup
+brew cleanup -s --force
+brew cask cleanup --force
 
 # Python install prompt
 read -n "${BOOTSTRAP} Do you want to install Python? [y/n] > "
