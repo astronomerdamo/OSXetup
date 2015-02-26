@@ -90,3 +90,7 @@ case $pyAnswer in
         echo "Okay, but you're missing out."
         ;;
 esac
+
+echo "${BOOTSTRAP} Running dock formatting..."
+./.osxdock
+
