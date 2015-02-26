@@ -1,0 +1,8 @@
+#!/bin/bash -e
+dockutil --remove all
+dockutil --no-restart --add ~/Applications/Firefox.app
+dockutil --no-restart --add /Applications/Safari.app/
+dockutil --no-restart --add /Applications/Mail.app/
+dockutil --no-restart --add /Applications/Messages.app
+dockutil --no-restart --add ~/Applications/iTerm.app
+killall -KILL Dock
