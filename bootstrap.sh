@@ -94,3 +94,5 @@ esac
 echo "${BOOTSTRAP} Running dock formatting..."
 ./.osxdock
 
+echo "${BOOTSTRAP} Installing oh-my-zsh"
+curl -L http://install.ohmyz.sh | sh
