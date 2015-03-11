@@ -96,3 +96,9 @@ echo "${BOOTSTRAP} Running dock formatting..."
 
 echo "${BOOTSTRAP} Installing oh-my-zsh"
 curl -L http://install.ohmyz.sh | sh
+
+echo "${BOOTSTRAP} You'll need to sign into dropbox so we restire mackup"
+open -a dropbox
+
+echo "${BOOTSTRAP} Restoring mackup"
+mackup restore
