@@ -56,23 +56,23 @@ case $pyAnswer in
                 case $minicondaChoice in
                     [1])
                         echo "Installing Python 2.7 via miniconda"
-                        wget -O ~/Downloads/Miniconda.sh http://repo.continuum.io/miniconda/Miniconda-3.8.3-MacOSX-x86_64.sh 
+                        wget -O ~/Downloads/Miniconda.sh http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh 
                         bash ~/Downloads/Miniconda.sh
                         rm ~/Downloads/Miniconda.sh
                         ;;
                     [2])
                         echo "Installing Python 3.4 via miniconda3"
-                        wget -O ~/Downloads/Miniconda3.sh http://repo.continuum.io/miniconda/Miniconda3-3.8.3-MacOSX-x86_64.sh
+                        wget -O ~/Downloads/Miniconda3.sh http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
                         bash ~/Downloads/Miniconda3.sh
                         rm ~/Downloads/Miniconda3.sh
                         ;;
                     [3])
                         echo "Installing Python 2.7 via miniconda"
-                        wget -O ~/Downloads/Miniconda.sh http://repo.continuum.io/miniconda/Miniconda-3.8.3-MacOSX-x86_64.sh
+                        wget -O ~/Downloads/Miniconda.sh http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh
                         bash ~/Downloads/Miniconda.sh
                         rm ~/Downloads/Miniconda.sh
                         echo "Installing Python 3.4 via miniconda3"
-                        wget -O ~/Downloads/Miniconda3.sh http://repo.continuum.io/miniconda/Miniconda3-3.8.3-MacOSX-x86_64.sh
+                        wget -O ~/Downloads/Miniconda3.sh http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
                         bash ~/Downloads/Miniconda3.sh
                         rm ~/Downloads/Miniconda3.sh
                         ;;
