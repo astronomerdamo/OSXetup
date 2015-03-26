@@ -3,6 +3,11 @@ OSXetup
 
 OS X Setup Script. Tested on Mavericks and up.
 
+Simple script designed to automate the task of setting up a new or freshly wiped mac.
+This script installs xcode, homebrew and all programs listed in .brewfile.
+Script then formats the dock and restores dotfiles (ie: ~/.vimrc) to home dirrectory using [Mackup](https://github.com/lra/mackup).
+OS X specific preferences plan to be added.
+
 Installation
 ------------
 
