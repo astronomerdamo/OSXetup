@@ -18,6 +18,7 @@ done 2>/dev/null &
 
 echo "${BOOTSTRAP} Installing xcode command line tools - May require user interaction"
 sudo xcode-select --install
+sudo xcodebuild -license
 read -p "${BOOTSTRAP} Press any key when Xcode install completes"
 
 echo "${BOOTSTRAP} Installing homebrew..."
